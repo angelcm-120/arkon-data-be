@@ -26,7 +26,7 @@ import static com.arkondata.utils.Funciones.gsonConverter;
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 @RestController
 @Service

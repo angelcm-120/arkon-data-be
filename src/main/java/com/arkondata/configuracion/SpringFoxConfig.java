@@ -28,7 +28,7 @@ import static com.arkondata.configuracion.Configuracion.getApiArkonData;
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 @lombok.Generated
 @Configuration
@@ -45,7 +45,7 @@ public class SpringFoxConfig {
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 	/**
 	 * Función de tipo docket para springfox swagger
@@ -70,7 +70,7 @@ public class SpringFoxConfig {
 	 * Fecha de Modificación:2021-05-20
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	private ApiInfo apiEndPointsInfo() {
 		var apiArkonData = getApiArkonData();

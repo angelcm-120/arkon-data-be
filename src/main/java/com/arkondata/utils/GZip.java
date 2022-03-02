@@ -24,7 +24,7 @@ import static com.arkondata.utils.Funciones.bytesToStr;
  * Fecha de Modificación:2021-08-10
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 @lombok.Generated
 @Data

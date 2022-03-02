@@ -28,7 +28,7 @@ import java.util.logging.Level;
 * Fecha de Modificación:2021-08-10
 * Persona que modifico: MACM
 * Descripción de modificación:
-* OT:
+
 */
 @lombok.Generated
 public class Redes {
@@ -65,7 +65,7 @@ public class Redes {
 	* Utilizado para obtener el puerto http por el que esta operando la aplicación
 	* Persona que modifico: MACM
 	* Descripción de modificación:
-	* OT:
+
 	*/
 	/**
 	* getPuertoHttp
@@ -100,7 +100,7 @@ public class Redes {
 	* Utilizado para obtener el puerto https por el que esta operando la aplicación
 	* Persona que modifico: MACM
 	* Descripción de modificación:
-	* OT:
+
 	*/
 	/**
 	* getPuertoHttps
@@ -135,7 +135,7 @@ public class Redes {
 	* Utilizado para recuperar la ip utilizada por la aplicación
 	* Persona que modifico: MACM
 	* Descripción de modificación:
-	* OT:
+
 	*/
 	/**
 	* cargaIP
@@ -171,7 +171,7 @@ public class Redes {
 	* Utilizado para recuperar la lista de servidores admitidos
 	* Persona que modifico: MACM
 	* Descripción de modificación:
-	* OT:
+
 	*/
 	/**
 	* validaIP
@@ -215,7 +215,7 @@ public class Redes {
 	* Utilizado para autoconfiar en todos los certificados de terceros para consumos web
 	* Persona que modifico: MACM
 	* Descripción de modificación:
-	* OT:
+
 	*/
 	/**
 	* TrustManager
@@ -231,7 +231,7 @@ public class Redes {
 	* Utilizado para autoconfiar en todos los certificados de terceros para consumos web
 	* Persona que modifico: MACM
 	* Descripción de modificación:
-	* OT:
+
 	*/
 	/**
 	* getTrustCertificates
@@ -278,7 +278,7 @@ public class Redes {
 	* Utilizado para implementar el nuevo cliente http, constructor para informar tipo de certificado TLS o SSL
 	* Persona que modifico: MACM
 	* Descripción de modificación:
-	* OT:
+
 	*/
 	/**
 	* httpClientCore
@@ -312,7 +312,7 @@ public class Redes {
 	* Utilizado para implementar el nuevo cliente http
 	* Persona que modifico: MACM
 	* Descripción de modificación:
-	* OT:
+
 	*/
 	/**
 	* httpClientCore

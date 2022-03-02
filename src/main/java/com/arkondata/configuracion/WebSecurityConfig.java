@@ -25,7 +25,7 @@ import java.util.logging.Level;
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 @lombok.Generated
 @Configuration
@@ -43,7 +43,7 @@ public class WebSecurityConfig
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 	/**
 	 * Función configure - Se encarga de definir las politicas de seguridad aplicadas para el consumo de servicios en

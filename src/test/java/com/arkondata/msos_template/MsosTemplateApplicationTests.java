@@ -22,6 +22,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
+import org.springframework.jdbc.core.JdbcTemplate;
+
 import java.util.Objects;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -36,7 +38,7 @@ import static org.junit.jupiter.api.Assertions.fail;
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 @Import(value = {ConfiguracionDevLocal.class,
 	WebSecurityConfig.class,
@@ -57,6 +59,16 @@ class MsoArkonDataApplicationTests {
 	private static final String EXITO = "Éxito";
 	private static final String ERROR = "Error";
 	private static final String URL = "http://test.com";
+
+
+	/**
+	 * Para la prueba recuperarmos el jdbctemplate ya que estas se corren sin necesidad de levantar la app,
+	 * por lo que para poder validar los servicios relacionados a dao o los controladores, se recupera un ds y se
+	 * setea para poder ejecutar las pruebas unitarias.
+	 */
+	@Autowired
+	@Qualifier("jdbcOracle")
+	private JdbcTemplate jdbcOracle;
 
 //</editor-fold>
 	
@@ -79,11 +91,11 @@ class MsoArkonDataApplicationTests {
 	 * Fecha de Modificación:2021-05-20
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	@BeforeAll
 	void initAll() {
-
+		Configuracion.setJdbcOracle(jdbcOracle);
 	}
 
 //<editor-fold desc="Test">
@@ -97,7 +109,7 @@ class MsoArkonDataApplicationTests {
 	 * Fecha de Modificación:2021-05-20
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	@Name("estatusTest")
 	@Order(1)
@@ -119,7 +131,7 @@ class MsoArkonDataApplicationTests {
 			fail(ERROR);
 		}
 	}
-	
+
 	/**
 	 * Nombre de proyecto: mso_metrobus
 	 * Sistema:MSO Base
@@ -130,7 +142,7 @@ class MsoArkonDataApplicationTests {
 	 * Fecha de Modificación:2021-05-20
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	@Name("apiArkonDataTest")
 	@Order(3)
@@ -139,7 +151,7 @@ class MsoArkonDataApplicationTests {
 		String metodo = Thread.currentThread()
 		                      .getStackTrace()[1]
 			.getMethodName();
-		
+
 		ApiArkonData apiArkonData = new ApiArkonData();
 		apiArkonData.setContact(null);
 		apiArkonData.setDescription(null);
@@ -150,7 +162,7 @@ class MsoArkonDataApplicationTests {
 		apiArkonData.setDescription(null);
 		assertEquals(true, !Objects.nonNull(apiArkonData.getContact()), EXITO);
 	}
-	
+
 	/**
 	 * Nombre de proyecto: mso_metrobus
 	 * Sistema:MSO Base
@@ -161,7 +173,7 @@ class MsoArkonDataApplicationTests {
 	 * Fecha de Modificación:2021-05-20
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	@Name("secureUtilTest")
 	@Order(4)
@@ -170,7 +182,7 @@ class MsoArkonDataApplicationTests {
 		assertEquals(true, SecurityUtil.cleanIt(URL).equals(URL), EXITO);
 		assertEquals(true, !SecurityUtil.cleanIt(ERROR).equals(URL), EXITO);
 		assertEquals(true, Objects.isNull(SecurityUtil.cleanIt(null)), EXITO);
-		
+
 		assertEquals(true, SecurityUtil.cleanItStr(ERROR).equals(ERROR), EXITO);
 		assertEquals(true, Objects.isNull(SecurityUtil.cleanItStr(null)), EXITO);
 	}

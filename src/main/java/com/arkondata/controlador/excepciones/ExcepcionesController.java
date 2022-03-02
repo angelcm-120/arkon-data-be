@@ -21,7 +21,7 @@ import java.util.List;
  * Fecha de Modificación:2021-08-18
  * Persona que modifico: EMORA
  * Descripción de modificación:
- * OT:
+
  */
 @lombok.Generated
 @ControllerAdvice

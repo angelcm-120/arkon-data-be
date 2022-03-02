@@ -42,7 +42,7 @@ import static com.arkondata.utils.Funciones.urlValidator;
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 @lombok.Generated
 @Component
@@ -93,7 +93,7 @@ public class JWTFilter
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 	/**
 	 * Función doFilter - Ejecuta la revisión del filtro sobre request y response antes de que esta llegue a algun
@@ -170,7 +170,7 @@ public class JWTFilter
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 	/**
 	 * Función validaTokenJWT - Utilizado para validar el contenido del token JWT
@@ -261,7 +261,7 @@ public class JWTFilter
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 	/**
 	 * Función ejecutaFiltro - Se encarga de detonar el chain.dofilter, este médoto permite la ejecución hacia el
@@ -329,7 +329,7 @@ public class JWTFilter
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 	/**
 	 * Función destroy - Se debe de utilizar para destruir objetos creados durante la ejecución de esta clase
@@ -350,7 +350,7 @@ public class JWTFilter
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 	/**
 	 * Función responseIsSecure - Se utiliza para agregar al header el Strict-Transport-Security
@@ -378,7 +378,7 @@ public class JWTFilter
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 	/**
 	 * Función validaExclusiones - Se utiliza para agregar exclusiones de ejecución en este filtro.

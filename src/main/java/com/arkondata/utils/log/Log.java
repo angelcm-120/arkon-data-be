@@ -27,7 +27,7 @@ import static com.arkondata.utils.Funciones.gsonConverter;
  * Fecha de Modificación:2021-08-10
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 @lombok.Generated
 public class Log {
@@ -96,7 +96,7 @@ public class Log {
 	 * Fecha de Modificación:2021-08-10
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	/**
 	 * LOG
@@ -140,7 +140,7 @@ public class Log {
 	 * Fecha de Modificación:2021-08-10
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	/**
 	 * Función getFile utilizada para recuperar el file de logs
@@ -160,7 +160,7 @@ public class Log {
 	 * Fecha de Modificación:2021-08-10
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	/**
 	 * Función setFile utilizada para setear el file de logs
@@ -182,7 +182,7 @@ public class Log {
 	 * Fecha de Modificación:2021-08-10
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	/**
 	 * Función getFileHandler utilizada para recuperar el filehandler de logs
@@ -202,7 +202,7 @@ public class Log {
 	 * Fecha de Modificación:2021-08-10
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	/**
 	 * Función setFileHandler utilizada para setear el filehandler de logs
@@ -231,7 +231,7 @@ public class Log {
 	 * Fecha de Modificación:2021-08-10
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	/**
 	 * depuraMensajes
@@ -276,7 +276,7 @@ public class Log {
 	 * Fecha de Modificación:2021-08-10
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	/**
 	 * escribeLog
@@ -378,7 +378,7 @@ public class Log {
 	 * Fecha de Modificación:2021-08-10
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	/**
 	 * escribeLogMS
@@ -469,7 +469,7 @@ public class Log {
 	 * Fecha de Modificación:2021-08-10
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	/**
 	 * escribeLogger función utilizada para enviar a escribir en logger consola y archivo el mensaje enviado por app

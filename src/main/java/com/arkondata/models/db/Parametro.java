@@ -21,7 +21,7 @@ import com.arkondata.utils.enums.TipoInputOutput;
  * Fecha de Modificación:2021-08-10
  * Persona que modifico: MTIB
  * Descripción de modificación:
- * OT:
+
  */
 @Data
 @ApiModel("Parametro")

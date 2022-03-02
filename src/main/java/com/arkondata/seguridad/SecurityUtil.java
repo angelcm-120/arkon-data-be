@@ -18,7 +18,7 @@ import static com.arkondata.utils.Funciones.urlValidator;
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 public final class SecurityUtil {
 	/**

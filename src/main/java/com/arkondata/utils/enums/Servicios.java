@@ -19,7 +19,7 @@ import static com.arkondata.utils.enums.TipoContenido.IMAGE_PNG;
  * Fecha de Modificación:2021-08-10
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 @lombok.Generated
 public enum Servicios {

@@ -17,7 +17,7 @@ import java.util.logging.Level;
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 @lombok.Generated
 @Configuration

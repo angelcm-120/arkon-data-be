@@ -20,7 +20,7 @@ import lombok.Data;
  * que se genera de forma automática por springfox swagger
  * Si es necesario se puede eliminar toda la clase y remover la dependencia del build.gradle, se deberá de remover
  * tambien la clase de SpringFoxConfig
- * OT:
+
  */
 @lombok.Generated
 @Data
@@ -104,7 +104,7 @@ public class ApiArkonData {
 	 * Descripción de modificación:
 	 * Esta clase normalmente no sera modificada a no ser que quieran incluir datos adicionales en la documentación
 	 * que se genera de forma automática por springfox swagger
-	 * OT:
+
 	 */
 	@lombok.Generated
 	public static class Contact {

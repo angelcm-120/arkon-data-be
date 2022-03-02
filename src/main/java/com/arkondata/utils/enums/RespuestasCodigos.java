@@ -14,7 +14,7 @@ import static com.arkondata.utils.Cadenas.MSJ_CODIGO_NA;
  * Fecha de Modificación:2021-08-10
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 @lombok.Generated
 public enum RespuestasCodigos {
@@ -89,7 +89,7 @@ public enum RespuestasCodigos {
  * Nombre de método: obtenValor
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 	/**
 	 * obtenValor
@@ -107,7 +107,7 @@ public enum RespuestasCodigos {
  * Nombre de método: esError
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 	/**
 	 * esError
@@ -159,7 +159,7 @@ public enum RespuestasCodigos {
  * Nombre de método: obtenCodigo
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 	/**
 	 * obtenCodigo
@@ -211,7 +211,7 @@ public enum RespuestasCodigos {
  * Nombre de método: obtenInfo
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 	/**
 	 * obtenInfo
@@ -263,7 +263,7 @@ public enum RespuestasCodigos {
  * Nombre de método: obtenMensaje
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 	/**
 	 * obtenMensaje
@@ -315,7 +315,7 @@ public enum RespuestasCodigos {
  * Nombre de método: obtenEstatus
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 	/**
 	 * obtenEstatus

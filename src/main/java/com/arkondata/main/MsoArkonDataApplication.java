@@ -24,7 +24,7 @@ import org.springframework.context.annotation.Import;
  * Fecha de Modificación:2021-05-20
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 @lombok.Generated
 @SpringBootApplication

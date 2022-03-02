@@ -34,7 +34,7 @@ import static com.arkondata.utils.Constantes.*;
  * Fecha de Modificación:2021-08-10
  * Persona que modifico: MACM
  * Descripción de modificación:
- * OT:
+
  */
 @lombok.Generated
 public class Funciones {
@@ -282,7 +282,7 @@ public class Funciones {
 	 * Fecha de Modificación:2021-05-20
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	/**
 	 * Función validateToken para validar jwts
