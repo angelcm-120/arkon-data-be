@@ -1,0 +1,10 @@
+---
+spring:
+  main:
+    banner-mode: "off"
+  banner:
+    location: classpath:/banner.txt
+logging:
+  file: logs/application.log
+  pattern:
+    console: "%m\r\n"

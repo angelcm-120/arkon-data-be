@@ -1,0 +1,248 @@
+import java.text.SimpleDateFormat
+import org.ajoberstar.grgit.Grgit
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {url 'https://repo.spring.io/snapshot' }
+        maven {url 'https://repo.spring.io/milestone' }
+        maven {url 'https://repo.maven.apache.org/maven2'}
+        maven {url 'https://mvnrepository.com/artifact'}
+        maven {url "https://plugins.gradle.org/m2/"}
+
+    }
+    dependencies {
+        //Check for the latest version here: http://plugins.gradle.org/plugin/com.jfrog.artifactory
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.21.0"
+    }
+}
+
+plugins {
+    id "org.ajoberstar.grgit" version "1.7.2"
+    id "com.jfrog.artifactory" version "4.21.0"
+    id 'org.springframework.boot' version '2.5.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'jacoco'
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group =  project.property("project.group")
+version =  project.property("py.version")
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+allprojects {
+    apply plugin: 'maven-publish'
+    apply plugin: "com.jfrog.artifactory"
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+configurations.all {
+    // Check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    exclude group:'org.springframework.boot', module:'spring-boot-starter-logging'
+}
+
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.6"
+}
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination layout.buildDirectory.dir('jacocoHtml').get().asFile
+    }
+}
+
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.spring.io/snapshot' }
+    maven { url 'https://repo.spring.io/milestone' }
+    maven {url 'https://repo.maven.apache.org/maven2'}
+    maven {url 'https://mvnrepository.com/artifact'}
+}
+
+
+
+
+tasks.register('fixVersion'){
+    Properties properties = new Properties()
+    properties.load(new File("src/main/resources/application.properties").newReader())
+    project.setProperty("py.version",(properties."spring.profiles.active".equals("devlocal")) ? version.toString().replace("RELEASE","SNAPSHOT")
+            : version.toString().replace("SNAPSHOT","RELEASE"))
+}
+
+tasks.register('fileVersion'){
+    new File(projectDir, "image.txt").text =project.property("project.name")+":"+project.findProperty("py.version").toString()
+            .replace("-SNAPSHOT","").replace("-RELEASE","")
+}
+
+tasks.register('buildDockerfile'){
+    Properties properties = new Properties()
+    properties.load(new File("src/main/resources/application.properties").newReader())
+    buildDockerfile.dependsOn(fixVersion)
+    buildDockerfile.dependsOn(fileVersion)
+    def check=project.findProperty("py.version")
+    doLast {
+        new File(projectDir, "Dockerfile").text =
+                """FROM openjdk:11
+MAINTAINER Angel CM (D)
+label "version"="${check}"
+label "revision"="${grgit.head().abbreviatedId}"
+label "buildtime"="${new Date()}"
+label "application_name"="${project.property("project.name")}"
+USER root
+
+# Set JAVA_HOME
+ENV JAVA_HOME=/usr/java/openjdk-11
+
+# Set TimeZone
+ENV TZ=America/Mexico_City
+
+# Copies everything over to Docker environment
+ARG JAR_FILE=build/libs/${project.property("project.name")}-${check}.jar
+ADD \${JAR_FILE} //
+RUN ln -snf /usr/share/zoneinfo/\$TZ /etc/localtime && echo \$TZ > /etc/timezone
+
+# Uses port which is used by the actual application
+EXPOSE 13000
+
+# Set ENTRYPOINT
+ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=${properties."spring.profiles.active"}", "${project.property("project.name")}-${check}.jar", "--server.port=13000"]
+"""
+    }
+}
+
+build.dependsOn(fixVersion)
+build.dependsOn(buildDockerfile)
+
+springBoot {
+    mainClass.set( project.property("py.mainclass"))
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId project.property("project.group")
+            artifactId project.property("project.name")
+            version project.property("py.version")
+            //from components.web  //for wars
+            from components.java  //for jars
+        }
+    }
+}
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
+    implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
+    // https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin
+    implementation group: 'org.jacoco', name: 'jacoco-maven-plugin', version: '0.8.6'
+    // https://mvnrepository.com/artifact/org.apache.maven/maven-core
+    implementation group: 'org.apache.maven', name: 'maven-core', version: '3.8.1'
+    // https://mvnrepository.com/artifact/org.springframework/spring-web
+    implementation group: 'org.springframework', name: 'spring-web', version: '5.3.6'
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+    // https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner
+    testImplementation group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.7.1'
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.7.1'
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.security:spring-security-messaging'
+
+    implementation group: 'org.jsoup', name: 'jsoup', version: '1.14.3'
+    implementation group: 'org.apache.commons', name: 'commons-text', version: '1.9'
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation(group: 'org.springframework.boot', name: 'spring-boot-starter-web'){
+        exclude group:'org.springframework.boot', module:'spring-boot-starter-logging'
+    }
+    compileOnly 'org.projectlombok:lombok'
+
+
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.0'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2', version: '2.4.5'
+    compileOnly group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.3'
+
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+}
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+bootJar{
+    bootJar.dependsOn(fixVersion)
+    bootJar.dependsOn(buildDockerfile)
+    enabled=true
+    archiveFileName =project.property("project.name")+"-"+project.property("py.version")+".jar"
+    archiveClassifier=""
+    manifest {
+        manifest {
+            attributes (
+                   'Class-Path': configurations.runtimeClasspath.files.collect { it.getName() }.join(' '),
+                    'Main-Class':  project.property("py.mainclass"),
+                    'Start-Class':  project.property("py.startclass")
+            )
+        }
+    }
+}
+
+jar {
+    jar.dependsOn(fixVersion)
+    jar.dependsOn(buildDockerfile)
+    enabled = true
+    archiveFileName =project.property("project.name")+"-"+project.property("py.version")+".jar"
+    archiveClassifier=""
+    manifest {
+        attributes (
+                'Class-Path': configurations.runtimeClasspath.files.collect { it.getName() }.join(' '),
+                'Main-Class':  project.property("py.mainclass"),
+                'Start-Class':  project.property("py.startclass")
+        )
+    }
+}
