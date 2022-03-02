@@ -1,8 +1,8 @@
 FROM openjdk:11
 MAINTAINER Angel CM (D)
 label "version"="0.0.1-SNAPSHOT"
-label "revision"="54cbd65"
-label "buildtime"="Wed Mar 02 01:59:21 CST 2022"
+label "revision"="cdf4cac"
+label "buildtime"="Wed Mar 02 15:39:58 CST 2022"
 label "application_name"="mso_metrobus"
 USER root
 
