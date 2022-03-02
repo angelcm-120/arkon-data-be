@@ -28,16 +28,10 @@ public class Alcaldias {
     private BigInteger id;
 
     @Column(nullable = false)
-    private BigInteger vehicle_id;
+    private String nombre;
 
     @Column(nullable = false)
-    private BigInteger vehicle_label;
-
-    @Column(nullable = false)
-    private BigInteger vehicle_current_status;
-
-    @Column(nullable = false)
-    private String geographic_point;
+    private String puntos_geograficos;
 
     public BigInteger getId() {
         return id;
@@ -47,35 +41,19 @@ public class Alcaldias {
         this.id = id;
     }
 
-    public BigInteger getVehicle_id() {
-        return vehicle_id;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setVehicle_id(BigInteger vehicle_id) {
-        this.vehicle_id = vehicle_id;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public BigInteger getVehicle_label() {
-        return vehicle_label;
+    public String getPuntos_geograficos() {
+        return puntos_geograficos;
     }
 
-    public void setVehicle_label(BigInteger vehicle_label) {
-        this.vehicle_label = vehicle_label;
-    }
-
-    public BigInteger getVehicle_current_status() {
-        return vehicle_current_status;
-    }
-
-    public void setVehicle_current_status(BigInteger vehicle_current_status) {
-        this.vehicle_current_status = vehicle_current_status;
-    }
-
-    public String getGeographic_point() {
-        return geographic_point;
-    }
-
-    public void setGeographic_point(String geographic_point) {
-        this.geographic_point = geographic_point;
+    public void setPuntos_geograficos(String puntos_geograficos) {
+        this.puntos_geograficos = puntos_geograficos;
     }
 }

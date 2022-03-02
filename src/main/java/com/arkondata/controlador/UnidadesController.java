@@ -37,17 +37,17 @@ import static com.arkondata.utils.network.Redes.httpClientCore;
  * Nombre de proyecto: mso_metrobus
  * Sistema:MSO Base
  * Arkon Data Test
- * Nombre de clase: EstatusController
- * Descripción:  Clase Controller del endpoint de estatus
+ * Nombre de clase: UnidadesController
+ * Descripción:  Clase Controller del endpoint de ubicaciones
  * <p>
- * Fecha de Modificación:2021-05-20
+ * Fecha de Modificación:2022-03-01
  * Persona que modifico: MACM
  * Descripción de modificación:
 
  */
 @RestController
 @Service
-@Api(value = "Controlador para consultar salud de servicio")
+@Api(value = "Controlador para consultar las unidades de metrobus")
 @RequestMapping({"/v1"})
 public final class UnidadesController {
 //<editor-fold desc="Variables">
@@ -105,7 +105,6 @@ public final class UnidadesController {
 	@GetMapping(value = "/unidades")
 	public ResponseEntity<Respuesta> unidades() {
 		var LOGGER = new Log();
-		var gson = gsonConverter();
 		var respuesta = new Respuesta();
 
 		try {
@@ -119,10 +118,10 @@ public final class UnidadesController {
 					respuesta.setCodigo(null);
 					respuesta.setInfo(null);
 
-					respuesta.setResultado(getUnidadesList(unidades));
+					respuesta.setResultado(unidades);
 
 					LOGGER.escribeLogMS(true, Level.INFO, titulo, respuesta.getServicio(), "",
-							gson.toJson(respuesta), "", null);
+							"Consulta exitosa", "", null);
 				}
 				else {
 					respuesta.setRespuesta(RespuestasCodigos.CODE404);
@@ -165,10 +164,9 @@ public final class UnidadesController {
 	 * @return devuelve una lista con las unidades disponibles y sus ubicaciones
 	 */
 	@GetMapping(value = "/unidades/{id}")
-	public ResponseEntity<Respuesta> unidadesId(@PathVariable(required = false)
+	public ResponseEntity<Respuesta> unidadesId(@PathVariable(required = true)
 															String id) {
 		var LOGGER = new Log();
-		var gson = gsonConverter();
 		var respuesta = new Respuesta();
 
 		try {
@@ -185,7 +183,7 @@ public final class UnidadesController {
 					respuesta = getUnidad(unidad, respuesta);
 
 					LOGGER.escribeLogMS(true, Level.INFO, titulo, respuesta.getServicio(), "",
-							gson.toJson(respuesta), "", null);
+							"Consulta exitosa", "", null);
 
 				} else {
 					respuesta.setRespuesta(RespuestasCodigos.CODE404);
@@ -238,11 +236,11 @@ public final class UnidadesController {
 						.get("results")
 						.getAsJsonArray().get(0).getAsJsonObject().get("locations").getAsJsonArray().get(0).getAsJsonObject();
 
-				if(!alcaldia.get("adminArea5").getAsString().isEmpty() && alcaldia.get("adminArea5").getAsString() != null) {
+				if(!alcaldia.get("adminArea4").getAsString().isEmpty() && alcaldia.get("adminArea4").getAsString() != null) {
 					unidadesResponseList.add(new UnidadesResponse(unidad.getId(), unidad.getVehicle_id(),
 							unidad.getVehicle_label(), unidad.getVehicle_current_status(), unidad.getGeographic_point(),
 							new AlcaldiaModel(alcaldia.get("street").getAsString(), alcaldia.get("adminArea3").getAsString(),
-									alcaldia.get("adminArea5").getAsString(), alcaldia.get("adminArea1").getAsString())));
+									alcaldia.get("adminArea4").getAsString(), alcaldia.get("adminArea1").getAsString())));
 				}
 
 			} catch (Exception ex) {
@@ -282,7 +280,7 @@ public final class UnidadesController {
 					.get("results")
 					.getAsJsonArray().get(0).getAsJsonObject().get("locations").getAsJsonArray().get(0).getAsJsonObject();
 
-			if(alcaldia.get("adminArea5").getAsString().isEmpty() || alcaldia.get("adminArea5").getAsString() == null) {
+			if(alcaldia.get("adminArea4").getAsString().isEmpty() || alcaldia.get("adminArea4").getAsString() == null) {
 				respuesta.setRespuesta(RespuestasCodigos.CODE404);
 				respuesta.setMensaje("No se encontró la ubicación de la unidad.");
 				respuesta.setResultado(null);
@@ -294,7 +292,7 @@ public final class UnidadesController {
 				respuesta.setResultado(new UnidadesResponse(unidad.get().getId(), unidad.get().getVehicle_id(),
 						unidad.get().getVehicle_label(), unidad.get().getVehicle_current_status(), unidad.get().getGeographic_point(),
 						new AlcaldiaModel(alcaldia.get("street").getAsString(), alcaldia.get("adminArea3").getAsString(),
-								alcaldia.get("adminArea5").getAsString(), alcaldia.get("adminArea1").getAsString())));
+								alcaldia.get("adminArea4").getAsString(), alcaldia.get("adminArea1").getAsString())));
 			}
 
 

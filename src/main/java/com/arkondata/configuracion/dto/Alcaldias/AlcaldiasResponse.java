@@ -1,6 +1,5 @@
-package com.arkondata.configuracion.dto.Unidades;
+package com.arkondata.configuracion.dto.Alcaldias;
 
-import com.arkondata.configuracion.dto.AlcaldiaModel;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,36 +23,21 @@ import java.math.BigInteger;
 @Data
 @ApiModel("AlcaldiasResponse")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UnidadesResponse {
+public class AlcaldiasResponse {
     @ApiModelProperty(name = "id",
             position = 1)
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private BigInteger id;
 
-    @ApiModelProperty(name = "vehicle_id",
+    @ApiModelProperty(name = "nombre",
             position = 2)
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private BigInteger vehicle_id;
+    private String nombre;
 
-    @ApiModelProperty(name = "vehicle_label",
+    @ApiModelProperty(name = "puntos_geograficos",
             position = 3)
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private BigInteger vehicle_label;
-
-    @ApiModelProperty(name = "vehicle_current_status",
-            position = 4)
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    private BigInteger vehicle_current_status;
-
-    @ApiModelProperty(name = "geographic_point",
-            position = 5)
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    private String geographic_point = "";
-
-    @ApiModelProperty(name = "alcaldia",
-            position = 6)
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    private AlcaldiaModel ubicacion;
+    private String puntos_geograficos;
 
     /**
      * Nombre de proyecto: mso_metrobus
@@ -66,14 +50,10 @@ public class UnidadesResponse {
      * Persona que modifico: MACM
      * Descripción de modificación:
      */
-    public UnidadesResponse(BigInteger id, BigInteger vehicle_id, BigInteger vehicle_label,
-                            BigInteger vehicle_current_status, String geographic_point, AlcaldiaModel ubicacion) {
+    public AlcaldiasResponse(BigInteger id, String nombre, String puntos_geograficos) {
         this.id = id;
-        this.vehicle_id = vehicle_id;
-        this.vehicle_label = vehicle_label;
-        this.vehicle_current_status = vehicle_current_status;
-        this.geographic_point = geographic_point;
-        this.ubicacion = ubicacion;
+        this.nombre = nombre;
+        this.puntos_geograficos = puntos_geograficos;
     }
 
     /**
@@ -87,7 +67,7 @@ public class UnidadesResponse {
      * Persona que modifico: MACM
      * Descripción de modificación:
      */
-    public UnidadesResponse() {
+    public AlcaldiasResponse() {
         /**
          * Constructor por default
          */
