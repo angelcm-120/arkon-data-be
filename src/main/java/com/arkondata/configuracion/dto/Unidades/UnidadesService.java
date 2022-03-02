@@ -1,9 +1,10 @@
-package com.arkondata.configuracion.dto;
+package com.arkondata.configuracion.dto.Unidades;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UnidadesService {
     public List<Unidades> getAllUnidades();
     public List<Unidades> getAllUnidadesDisponibles();
-    public Unidades saveUnidad(Unidades unidades);
+    public Optional<Unidades> getUnidadDisponibleId(String id);
 }

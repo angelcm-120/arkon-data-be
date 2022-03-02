@@ -1,5 +1,6 @@
-package com.arkondata.configuracion.dto;
+package com.arkondata.configuracion.dto.Unidades;
 
+import com.arkondata.configuracion.dto.AlcaldiaModel;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -52,7 +53,7 @@ public class UnidadesResponse {
     @ApiModelProperty(name = "alcaldia",
             position = 6)
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private Alcaldia ubicacion;
+    private AlcaldiaModel ubicacion;
 
     /**
      * Nombre de proyecto: mso_metrobus
@@ -66,7 +67,7 @@ public class UnidadesResponse {
      * Descripción de modificación:
      */
     public UnidadesResponse(BigInteger id, BigInteger vehicle_id, BigInteger vehicle_label,
-                            BigInteger vehicle_current_status, String geographic_point, Alcaldia ubicacion) {
+                            BigInteger vehicle_current_status, String geographic_point, AlcaldiaModel ubicacion) {
         this.id = id;
         this.vehicle_id = vehicle_id;
         this.vehicle_label = vehicle_label;

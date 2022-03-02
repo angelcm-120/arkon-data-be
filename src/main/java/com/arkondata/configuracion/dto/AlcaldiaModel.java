@@ -9,9 +9,9 @@ import lombok.Data;
  * Nombre de proyecto: mso_metrobus
  * Sistema:MSO Base
  * Arkon Data Test
- * Nombre de clase: Alcaldia
- * Descripción:  Clase dto para el objeto de Alcaldia response
- * Detona los miembros para los datos de Alcaldia response.
+ * Nombre de clase: AlcaldiaModel
+ * Descripción:  Clase dto para el objeto de AlcaldiaModel response
+ * Detona los miembros para los datos de AlcaldiaModel response.
  * Fecha de Modificación:2022-03-01
  * Persona que modifico: MACM
  * Descripción de modificación:
@@ -19,9 +19,9 @@ import lombok.Data;
  */
 @lombok.Generated
 @Data
-@ApiModel("Alcaldia")
+@ApiModel("AlcaldiaModel")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Alcaldia {
+public class AlcaldiaModel {
     @ApiModelProperty(name = "calle",
             position = 1)
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -46,14 +46,14 @@ public class Alcaldia {
      * Nombre de proyecto: mso_metrobus
      * Sistema:MSO Base
      * Arkon Data Test
-     * Nombre de clase: Alcaldia
-     * Descripción:  Clase dto para el objeto de Alcaldia response
-     * Detona los miembros para los datos de Alcaldia response.
+     * Nombre de clase: AlcaldiaModel
+     * Descripción:  Clase dto para el objeto de AlcaldiaModel response
+     * Detona los miembros para los datos de AlcaldiaModel response.
      * Fecha de Modificación:2022-03-02
      * Persona que modifico: MACM
      * Descripción de modificación:
      */
-    public Alcaldia(String calle, String region, String alcaldia, String pais) {
+    public AlcaldiaModel(String calle, String region, String alcaldia, String pais) {
         this.calle = calle;
         this.region = region;
         this.alcaldia = alcaldia;
@@ -64,14 +64,14 @@ public class Alcaldia {
      * Nombre de proyecto: mso_metrobus
      * Sistema:MSO Base
      * Arkon Data Test
-     * Nombre de clase: Alcaldia
-     * Descripción:  Clase dto para el objeto de Alcaldia response
-     * Detona los miembros para los datos de Alcaldia response.
+     * Nombre de clase: AlcaldiaModel
+     * Descripción:  Clase dto para el objeto de AlcaldiaModel response
+     * Detona los miembros para los datos de AlcaldiaModel response.
      * Fecha de Modificación:2022-03-02
      * Persona que modifico: MACM
      * Descripción de modificación:
      */
-    public Alcaldia() {
+    public AlcaldiaModel() {
         /**
          * Constructor default
          */

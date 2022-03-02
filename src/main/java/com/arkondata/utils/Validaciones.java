@@ -41,7 +41,7 @@ public class Validaciones {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Nombre de proyecto: mso_metrobus
 	 * Sistema:MSO Base
@@ -60,6 +60,31 @@ public class Validaciones {
 			valor = valor.replace('\t', '_').replace('\n', '_').replace('\r', '_');
 			LOGGER.escribeLogMS(Boolean.FALSE, Level.INFO, "", "", "", "", "", null);
 			return Integer.parseInt(valor) == 0;
+		}
+		catch (Exception ex) {
+			LOGGER.escribeLogMS(Boolean.FALSE, Level.INFO, "", "", "", "", ex.getMessage(), ex);
+			return false;
+		}
+	}
+
+	/**
+	 * Nombre de proyecto: mso_metrobus
+	 * Sistema:MSO Base
+	 * Arkon Data Test
+	 * Nombre de clase: Validaciones
+	 * Nombre del metodo: isNumberPositivo
+	 * Descripción:  Metodo que permite validar si el dato de entrada
+	 * es numerico
+	 * Fecha de Modificación:2021-11-02
+	 * Persona que modifico: MACM
+	 * Descripción de modificación: Verifica que un String sea un número positivo o igual a cero.
+
+	 */
+	public static boolean isNumberPositivo(String valor) {
+		try {
+			valor = valor.replace('\t', '_').replace('\n', '_').replace('\r', '_');
+			LOGGER.escribeLogMS(Boolean.FALSE, Level.INFO, "", "", "", "", "", null);
+			return Integer.parseInt(valor) >= 0;
 		}
 		catch (Exception ex) {
 			LOGGER.escribeLogMS(Boolean.FALSE, Level.INFO, "", "", "", "", ex.getMessage(), ex);

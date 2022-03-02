@@ -1,4 +1,4 @@
-package com.arkondata.configuracion.dto;
+package com.arkondata.configuracion.dto.Alcaldias;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,19 +10,19 @@ import java.math.BigInteger;
  * Nombre de proyecto: mso_metrobus
  * Sistema:MSO Base
  * Arkon Data Test
- * Nombre de clase: Unidades
- * Descripción:  Clase dto para el objeto de Unidades
- * Detona los miembros para los datos de Unidades
+ * Nombre de clase: Alcaldias
+ * Descripción:  Clase dto para el objeto de Alcaldias
+ * Detona los miembros para los datos de Alcaldias
  * Fecha de Modificación:2022-03-01
  * Persona que modifico: MACM
  * Descripción de modificación:
 
  */
 @Entity
-@Table(name = "unidades")
+@Table(name = "alcaldias")
 @Getter
 @Setter
-public class Unidades {
+public class Alcaldias {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger id;
