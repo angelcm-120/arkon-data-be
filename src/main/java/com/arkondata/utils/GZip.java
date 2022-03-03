@@ -38,11 +38,11 @@ public class GZip {
 	/**
 	 * compress
 	 *
-	 * @param str
+	 * @param str valor para str
 	 *
-	 * @return
+	 * @return los byte de la compress
 	 *
-	 * @throws IOException
+	 * @throws IOException Excepción
 	 */
 	public static byte[] compress(final String str) throws
 	                                                IOException {
@@ -60,11 +60,11 @@ public class GZip {
 	/**
 	 * compressToString
 	 *
-	 * @param str
+	 * @param str valor para str
 	 *
-	 * @return
+	 * @return string
 	 *
-	 * @throws IOException
+	 * @throws IOException Excepción
 	 */
 	public static String compressToString(final String str) throws
 	                                                        IOException {
@@ -82,12 +82,12 @@ public class GZip {
 	/**
 	 * compressToBase64
 	 *
-	 * @param str
-	 * @param encode
+	 * @param str valor para str
+	 * @param encode valor para encode
 	 *
-	 * @return
+	 * @return string con la compresión en base 64
 	 *
-	 * @throws IOException
+	 * @throws IOException Excepción
 	 */
 	public static String compressToBase64(final String str, String encode) throws
 	                                                                       IOException {
@@ -111,12 +111,12 @@ public class GZip {
 	/**
 	 * decompress
 	 *
-	 * @param compressed
-	 * @param encode
+	 * @param compressed valor para compressed
+	 * @param encode valor para encode
 	 *
-	 * @return
+	 * @return la descompresión
 	 *
-	 * @throws IOException
+	 * @throws IOException Excepción
 	 */
 	public static String decompress(final byte[] compressed, String encode) throws
 	                                                                        IOException {
@@ -149,12 +149,12 @@ public class GZip {
 	/**
 	 * decompressFromBase64
 	 *
-	 * @param str
-	 * @param encode
+	 * @param str valor para str
+	 * @param encode valor para encode
 	 *
-	 * @return
+	 * @return descompresión en base 64
 	 *
-	 * @throws IOException
+	 * @throws IOException Excepción
 	 */
 	public static String decompressFromBase64(String str, String encode) throws
 	                                                                     IOException {
@@ -187,9 +187,9 @@ public class GZip {
 	/**
 	 * isCompressed
 	 *
-	 * @param compressed
+	 * @param compressed valor para compressed
 	 *
-	 * @return
+	 * @return valida la compresión
 	 */
 	public static boolean isCompressed(final byte[] compressed) {
 		return (compressed[0] == (byte) (GZIPInputStream.GZIP_MAGIC)) && (compressed[1] == (byte)

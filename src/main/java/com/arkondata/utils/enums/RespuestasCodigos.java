@@ -94,7 +94,7 @@ public enum RespuestasCodigos {
 	/**
 	 * obtenValor
 	 *
-	 * @return
+	 * @return valor de tipo int de la variable valor
 	 */
 	public int obtenValor() {
 		return valor;
@@ -112,7 +112,7 @@ public enum RespuestasCodigos {
 	/**
 	 * esError
 	 *
-	 * @return
+	 * @return retorna si es un error o no
 	 */
 	public Boolean esError() {
 		Boolean error = false;
@@ -164,7 +164,7 @@ public enum RespuestasCodigos {
 	/**
 	 * obtenCodigo
 	 *
-	 * @return
+	 * @return el valor del código de respuesta
 	 */
 	public String obtenCodigo() {
 		var mensaje = "";
@@ -216,7 +216,7 @@ public enum RespuestasCodigos {
 	/**
 	 * obtenInfo
 	 *
-	 * @return
+	 * @return la info de la petición
 	 */
 	public String obtenInfo() {
 		var mensaje = "";
@@ -268,7 +268,7 @@ public enum RespuestasCodigos {
 	/**
 	 * obtenMensaje
 	 *
-	 * @return
+	 * @return el valor del mensaje
 	 */
 	public String obtenMensaje() {
 		var mensaje = "";
@@ -320,7 +320,7 @@ public enum RespuestasCodigos {
 	/**
 	 * obtenEstatus
 	 *
-	 * @return
+	 * @return el estatus http
 	 */
 	public HttpStatus obtenEstatus() {
 		HttpStatus httpStatus;

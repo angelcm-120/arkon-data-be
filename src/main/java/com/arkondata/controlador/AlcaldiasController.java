@@ -100,7 +100,7 @@ public final class AlcaldiasController {
 	 * Fecha de Modificación:2022-03-01
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	/**
      *
@@ -155,13 +155,9 @@ public final class AlcaldiasController {
 	 * Fecha de Modificación:2022-03-01
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
-	 */
-	/**
 	 *
-	 * Recurso unidades
-	 *
-	 * @return devuelve una lista con las unidades disponibles y sus ubicaciones
+	 * @param id valor para el id de la alcaldia
+	 * @return objeto respuesta con los datos de las unidades
 	 */
 	@GetMapping(value = "/alcaldias/{id}")
 	public ResponseEntity<Respuesta> alcaldiasUnidades(@PathVariable(required = true)

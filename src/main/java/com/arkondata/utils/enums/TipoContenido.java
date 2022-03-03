@@ -155,7 +155,7 @@ public enum TipoContenido {
 	/**
 	 * getValue
 	 *
-	 * @return
+	 * @return los bytes del valor value
 	 */
 	public String getValue() {
 		return value;

@@ -19,7 +19,7 @@ import com.arkondata.utils.enums.TipoInputOutput;
  * Nombre de clase: Parametro
  * Descripción:  Clase que crea objeto para manipular los parametros de las consultas a bd.
  * Fecha de Modificación:2021-08-10
- * Persona que modifico: MTIB
+ * Persona que modifico: MACM
  * Descripción de modificación:
 
  */
@@ -85,11 +85,11 @@ public class Parametro {
 	/**
 	 * Constructor Parametro
 	 *
-	 * @param indice
-	 * @param valor
-	 * @param tipo
-	 * @param tamano
-	 * @param tipoIO
+	 * @param indice valor para indice
+	 * @param valor valor para valor
+	 * @param tipo valor para tipo
+	 * @param tamano valor para tamano
+	 * @param tipoIO valor para tipoIO
 	 */
 	public Parametro(int indice, String valor, TipoDato tipo, int tamano, TipoInputOutput tipoIO) {
 		this.indice = indice;

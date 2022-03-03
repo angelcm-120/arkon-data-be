@@ -1,8 +1,8 @@
 FROM openjdk:11
 MAINTAINER Angel CM (D)
-label "version"="0.0.1-SNAPSHOT"
-label "revision"="cdf4cac"
-label "buildtime"="Wed Mar 02 15:39:58 CST 2022"
+label "version"="1.0.0-SNAPSHOT"
+label "revision"="32fae38"
+label "buildtime"="Wed Mar 02 18:09:49 CST 2022"
 label "application_name"="mso_metrobus"
 USER root
 
@@ -13,7 +13,7 @@ ENV JAVA_HOME=/usr/java/openjdk-11
 ENV TZ=America/Mexico_City
 
 # Copies everything over to Docker environment
-ARG JAR_FILE=build/libs/mso_metrobus-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=build/libs/mso_metrobus-1.0.0-SNAPSHOT.jar
 ADD ${JAR_FILE} //
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
@@ -21,4 +21,4 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 EXPOSE 13000
 
 # Set ENTRYPOINT
-ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=devlocal", "mso_metrobus-0.0.1-SNAPSHOT.jar", "--server.port=13000"]
+ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=devlocal", "mso_metrobus-1.0.0-SNAPSHOT.jar", "--server.port=13000"]

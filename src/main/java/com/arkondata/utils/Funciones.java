@@ -72,7 +72,7 @@ public class Funciones {
 	/**
 	 * folio
 	 *
-	 * @return
+	 * @return valor para el folio
 	 */
 	public static String folio() {
 		
@@ -86,9 +86,9 @@ public class Funciones {
 	/**
 	 * formateaFecha
 	 *
-	 * @param fecha
+	 * @param fecha valor de la fecha
 	 *
-	 * @return
+	 * @return fecha con formato
 	 */
 	public static String formateaFecha(Date fecha) {
 		var formatter = new SimpleDateFormat(FORMATO_FECHAS);
@@ -98,9 +98,9 @@ public class Funciones {
 	/**
 	 * formateaFecha2
 	 *
-	 * @param fecha
+	 * @param fecha valor de la fecha
 	 *
-	 * @return
+	 * @return fecha con formato
 	 */
 	public static String formateaFecha2(Date fecha) {
 		var formatter = new SimpleDateFormat(FORMATO_FECHAS_2);
@@ -110,9 +110,9 @@ public class Funciones {
 	/**
 	 * formateaFechaHora
 	 *
-	 * @param fecha
+	 * @param fecha valor de la fecha hora
 	 *
-	 * @return
+	 * @return fecha hora con formato
 	 */
 	public static String formateaFechaHora(ZonedDateTime fecha) {
 		var formatter = DateTimeFormatter.ofPattern(FORMATO_FECHAS_HORAS);
@@ -122,7 +122,7 @@ public class Funciones {
 	/**
 	 * formateaFechaHoraTimeStamp
 	 *
-	 * @param fecha
+	 * @param fecha valor de la fecha
 	 *
 	 * @return fecha y hora con formato yyyy-MM-dd HH:mm:ss.SSS
 	 */
@@ -134,7 +134,7 @@ public class Funciones {
 	/**
 	 * formateaFechaHora2
 	 *
-	 * @param fecha
+	 * @param fecha valor de la fecha
 	 *
 	 * @return fecha y hora con formato dd/MM/yyyy HH:mm:ss
 	 */
@@ -146,7 +146,7 @@ public class Funciones {
 	/**
 	 * formateaFechaString
 	 *
-	 * @param strFecha
+	 * @param strFecha fecha en str
 	 *
 	 * @return fecha
 	 */
@@ -163,8 +163,8 @@ public class Funciones {
 	/**
 	 * formateaFechaStringToDate
 	 *
-	 * @param strFecha
-	 * @param formatoFechas
+	 * @param strFecha valor para strFecha
+	 * @param formatoFechas valor para formatoFechas
 	 *
 	 * @return formateaFechaStringToDate
 	 */
@@ -196,8 +196,8 @@ public class Funciones {
 	/**
 	 * base64Archivo
 	 *
-	 * @param path
-	 * @param contenido
+	 * @param path valor para path
+	 * @param contenido valor para contenido
 	 *
 	 * @return Archivo base 64
 	 */
@@ -230,8 +230,8 @@ public class Funciones {
 	/**
 	 * cadenasv3
 	 *
-	 * @param cadenas
-	 * @param cadenaOriginal
+	 * @param cadenas valor para cadenas
+	 * @param cadenaOriginal valor para cadenaOriginal
 	 *
 	 * @return List cadenasv3
 	 */
@@ -250,8 +250,8 @@ public class Funciones {
 	/**
 	 * reemplazaParametros
 	 *
-	 * @param qry
-	 * @param params
+	 * @param qry valor para qry
+	 * @param params valor para params
 	 *
 	 * @return reemplazaParametros
 	 */
@@ -282,9 +282,7 @@ public class Funciones {
 	 * Fecha de Modificación:2021-05-20
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-
-	 */
-	/**
+	 *
 	 * Función validateToken para validar jwts
 	 * @param authToken token
 	 * @return Claims de parset jwt

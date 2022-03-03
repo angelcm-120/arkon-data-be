@@ -143,7 +143,7 @@ public class CodigosRespuesta
 	/**
 	 * setRespuesta
 	 *
-	 * @param respuesta
+	 * @param respuesta valor para respuesta
 	 */
 	public void setRespuesta(RespuestasCodigos respuesta) {
 		codigo = respuesta.obtenCodigo();
@@ -155,8 +155,8 @@ public class CodigosRespuesta
 	/**
 	 * setRespuesta
 	 *
-	 * @param respuesta
-	 * @param exception
+	 * @param respuesta valor para respuesta
+	 * @param exception valor para exception
 	 */
 	public void setRespuesta(RespuestasCodigos respuesta, Exception exception) {
 		codigo = respuesta.obtenCodigo();

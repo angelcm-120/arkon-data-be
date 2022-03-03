@@ -36,7 +36,7 @@ public enum TipoAmbiente {
 	/**
 	 * TipoAmbiente
 	 *
-	 * @param value
+	 * @param value valor del value
 	 */
 	TipoAmbiente(int value) {
 		this.value = value;
@@ -45,7 +45,7 @@ public enum TipoAmbiente {
 	/**
 	 * getByte
 	 *
-	 * @return
+	 * @return los bytes del valor value
 	 */
 	public byte getByte() {
 		return (byte) value;

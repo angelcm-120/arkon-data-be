@@ -55,16 +55,14 @@ public class Utilerias {
 	 * Cloud y DevOps
 	 * Nombre de método: parametrosList
 	 * Fecha de Modificación:2021-08-10
-	 * Persona que modifico: EYMG
+	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-
-	 */
-	/**
+	 *
 	 * parametrosList
 	 *
-	 * @param parametros
+	 * @param parametros valor de los parametros de la BD
 	 *
-	 * @return
+	 * @return lista de parametro SQL
 	 */
 	public static List<SqlParameter> parametrosList(List<Parametro> parametros) {
 		List<SqlParameter> paramList = new ArrayList<>();
@@ -83,20 +81,18 @@ public class Utilerias {
 	 * Cloud y DevOps
 	 * Nombre de método: validaTipos
 	 * Fecha de Modificación:2021-08-10
-	 * Persona que modifico: EYMG
+	 * Persona que modifico: MACM
 	 * Descripción de modificación:
 
-	 */
-	/**
 	 * validaTipos
 	 * <p>
 	 * Se valida el tipo de parámetro que se esta enviando a DAOS
 	 * Se regresa un objecto de tipo sqlparameter con el tipo de dato requerido para que la ejecución contra la db
 	 * sea correcta
 	 *
-	 * @param parametro
+	 * @param parametro valor del parametro SQL
 	 *
-	 * @return SqlParameter
+	 * @return parametro en formato SqlParameter
 	 */
 	public static SqlParameter validaTipos(Parametro parametro) {
 		SqlParameter param = null;
@@ -206,19 +202,13 @@ public class Utilerias {
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
 
-	 */
-	/**
 	 * validaEntrada
 	 *
-	 * @param parametro
+	 * @param parametro valor del parametro
 	 *
-	 * @return boolean
+	 * @return boolean que india si el parámetro es válido
 	 */
 	public static boolean validaEntrada(Parametro parametro) {
-		/**
-		 * Valida si eltipo de parámetro es de entrada,
-		 * retorna una bandera
-		 */
 		return parametro.getTipoIO().equals(TipoInputOutput.DB_ENTRADA);
 	}
 	
@@ -236,9 +226,9 @@ public class Utilerias {
 	/**
 	 * resultMaptoJson
 	 *
-	 * @param resultMap
+	 * @param resultMap valor Map para conversión a json
 	 *
-	 * @return
+	 * @return objeto json
 	 */
 	public static JsonObject resultMaptoJson(Map<String, Object> resultMap) {
 		var log = new Log();
@@ -279,9 +269,9 @@ public class Utilerias {
 	/**
 	 * resultMaptoJson
 	 *
-	 * @param resultMap
+	 * @param resultMap valor Map para conversión a json
 	 *
-	 * @return
+	 * @return objero json
 	 */
 	public static JsonObject resultMaptoJson2(Map<String, Object> resultMap) {
 		var log = new Log();
@@ -314,7 +304,7 @@ public class Utilerias {
 	 * Nombre de método: creaArreglo
 	 * Descripción:  Método para convertir objetos map string object en JsonObjects
 	 * Fecha de Modificación:2021-08-10
-	 * Persona que modifico: MTIB
+	 * Persona que modifico: MACM
 	 * Descripción de modificación:
 
 	 */
@@ -354,16 +344,16 @@ public class Utilerias {
 	 * Nombre de método: creaArreglo
 	 * Descripción:  Método para convertir objetos map string object en JsonObjects
 	 * Fecha de Modificación:2021-08-10
-	 * Persona que modifico: MTIB
+	 * Persona que modifico: MACM
 	 * Descripción de modificación:
 
 	 */
 	/**
 	 * resultMaptoJson
 	 *
-	 * @param entry
+	 * @param entry objeto de entrada
 	 *
-	 * @return
+	 * @return lista de objetos
 	 */
 	public static List<Object> creaArreglo(Map.Entry<String, Object> entry) {
 		
@@ -394,14 +384,13 @@ public class Utilerias {
 	 * Nombre de método: creaEntry2
 	 * Descripción:  Método para convertir objetos map string object en JsonObjects
 	 * Fecha de Modificación:2021-08-10
-	 * Persona que modifico: MTIB
+	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-
+	 *
+	 *
+	 * @param entry Map de entrada de tipo String
+	 * @return Map de tipo String
 	 */
-	/**
-	 * creaEntry2
-	 */
-	
 	public static Map.Entry<String, Object> creaEntry2(Map.Entry<String, Object> entry) {
 		var log = new Log();
 		Map.Entry<String, Object> entry2 = entry;
@@ -457,9 +446,12 @@ public class Utilerias {
 	 * Nombre de método: creaEntry2
 	 * Descripción:  Método para convertir objetos map string object en JsonObjects
 	 * Fecha de Modificación:2021-08-10
-	 * Persona que modifico: MTIB
+	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-
+	 *
+	 *
+	 * @param numero número de la posición del parametro de entrada de un procedure de la DB
+	 * @return el numero en cadena
 	 */
 	public static String parametrosBD(int numero) {
 		StringBuilder cadena = new StringBuilder();

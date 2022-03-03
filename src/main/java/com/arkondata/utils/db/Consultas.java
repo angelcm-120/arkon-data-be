@@ -30,7 +30,7 @@ import static com.arkondata.utils.db.Utilerias.parametrosList;
  * Nombre de clase: Consultas
  * Descripción:  Clase utileria para el manejo de las consultas hacia las bases de datos.
  * Fecha de Modificación:2021-08-10
- * Persona que modifico: EYMG
+ * Persona que modifico: MACM
  * Descripción de modificación:
 
  */
@@ -53,7 +53,7 @@ public class Consultas {
      * utilizará
      * para ejecutar la consulta
      * Fecha de Modificación:2021-08-10
-     * Persona que modifico: EYMG
+     * Persona que modifico: MACM
      * Descripción de modificación:
 
      */
@@ -78,7 +78,7 @@ public class Consultas {
      * string
      * objects
      * Fecha de Modificación:2021-08-10
-     * Persona que modifico: EYMG
+     * Persona que modifico: MACM
      * Descripción de modificación:
 
      */
@@ -109,7 +109,7 @@ public class Consultas {
                      * Descripción:  Método para el manejo de los call statement para
                      * consumos hacia db
                      * Fecha de Modificación:2021-08-10
-                     * Persona que modifico: EYMG
+                     * Persona que modifico: MACM
                      * Descripción de modificación:
 
                      */
@@ -143,7 +143,7 @@ public class Consultas {
      * Nombre de método: buildCS
      * Descripción:  Método para el manejo de los call statement para consumos hacia db
      * Fecha de Modificación:2021-08-10
-     * Persona que modifico: EYMG
+     * Persona que modifico: MACM
      * Descripción de modificación:
 
      */
@@ -176,7 +176,7 @@ public class Consultas {
      * Cloud y DevOps
      * Nombre de método: setParametros
      * Fecha de Modificación:2021-08-10
-     * Persona que modifico: EYMG
+     * Persona que modifico: MACM
      * Descripción de modificación:
 
      */

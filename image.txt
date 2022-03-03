@@ -1,1 +1,1 @@
-mso_metrobus:0.0.1
+mso_metrobus:1.0.0

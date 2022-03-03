@@ -281,14 +281,14 @@ public class Log {
 	/**
 	 * escribeLog
 	 *
-	 * @param guardaLog
-	 * @param lvl
-	 * @param aplicacion
-	 * @param servicio
-	 * @param peticion
-	 * @param respuesta
-	 * @param mensaje
-	 * @param e
+	 * @param guardaLog valor de guardaLog
+	 * @param lvl valor de lvl
+	 * @param aplicacion valor de aplicacion
+	 * @param servicio valor de servicio
+	 * @param peticion valor de peticion
+	 * @param respuesta valor de respuesta
+	 * @param mensaje valor de mensaje
+	 * @param e valor de e
 	 */
 	public void escribeLog(Boolean guardaLog, Level lvl, String aplicacion, String servicio, String peticion,
 	                       String respuesta, String mensaje, Exception e) {
@@ -383,14 +383,14 @@ public class Log {
 	/**
 	 * escribeLogMS
 	 *
-	 * @param guardaLog
-	 * @param lvl
-	 * @param aplicacion
-	 * @param servicio
-	 * @param peticion
-	 * @param respuesta
-	 * @param mensaje
-	 * @param e
+	 * @param guardaLog valor para guardaLog
+	 * @param lvl valor para lvl
+	 * @param aplicacion valor para aplicacion
+	 * @param servicio valor para servicio
+	 * @param peticion valor para peticion
+	 * @param respuesta valor para respuesta
+	 * @param mensaje valor para mensaje
+	 * @param e valor para e
 	 */
 	public void escribeLogMS(Boolean guardaLog, Level lvl, String aplicacion, String servicio, String peticion,
 	                         String respuesta, String mensaje, Exception e) {

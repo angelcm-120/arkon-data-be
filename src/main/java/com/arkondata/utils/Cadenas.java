@@ -158,11 +158,11 @@ public class Cadenas {
 	/**
 	 * setCelula
 	 *
-	 * @param direccion
-	 * @param area
-	 * @param app
+	 * @param direccion valor para direccion
+	 * @param area valor para area
+	 * @param app valor para app
 	 *
-	 * @return
+	 * @return la celula
 	 */
 	public static String setCelula(String direccion, String area, String app) {
 		direccionp = direccion;
@@ -176,7 +176,7 @@ public class Cadenas {
 	/**
 	 * setCodigoApi
 	 *
-	 * @param codigo
+	 * @param codigo valor para el código
 	 */
 	public static void setCodigoApi(String codigo) {
 		codigoApi = codigo;

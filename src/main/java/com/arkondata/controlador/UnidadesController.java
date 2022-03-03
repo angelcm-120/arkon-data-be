@@ -94,7 +94,7 @@ public final class UnidadesController {
 	 * Fecha de Modificación:2022-03-01
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
+
 	 */
 	/**
 	 *
@@ -155,12 +155,8 @@ public final class UnidadesController {
 	 * Fecha de Modificación:2022-03-01
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-	 * OT:
-	 */
-	/**
 	 *
-	 * Recurso unidades
-	 *
+	 * @param id valor para el id de una unidad
 	 * @return devuelve una lista con las unidades disponibles y sus ubicaciones
 	 */
 	@GetMapping(value = "/unidades/{id}")

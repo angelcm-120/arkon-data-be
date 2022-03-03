@@ -75,7 +75,7 @@ public enum Pais {
 	/**
 	 * getByte
 	 *
-	 * @return
+	 * @return los bytes del valor value
 	 */
 	public byte getByte() {
 		return (byte) value;
@@ -84,7 +84,7 @@ public enum Pais {
 	/**
 	 * getValue
 	 *
-	 * @return
+	 * @return valor de value
 	 */
 	public int getValue() {
 		return value;

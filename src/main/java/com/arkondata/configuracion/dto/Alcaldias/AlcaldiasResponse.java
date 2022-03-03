@@ -49,6 +49,10 @@ public class AlcaldiasResponse {
      * Fecha de Modificación:2022-03-02
      * Persona que modifico: MACM
      * Descripción de modificación:
+     *
+     * @param id valor para id
+     * @param nombre valor para nombre
+     * @param puntos_geograficos valor para puntos_geograficosa
      */
     public AlcaldiasResponse(BigInteger id, String nombre, String puntos_geograficos) {
         this.id = id;

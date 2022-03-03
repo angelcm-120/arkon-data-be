@@ -145,7 +145,7 @@ public enum Numeros {
 	/**
 	 * getByte
 	 *
-	 * @return
+	 * @return los bytes del valor value
 	 */
 	public byte getByte() {
 		return (byte) value;

@@ -154,7 +154,7 @@ public enum Servicios {
 	/**
 	 * getValue
 	 *
-	 * @return
+	 * @return el valor de la variable value
 	 */
 	public int getValue() {
 		return value;
@@ -163,7 +163,7 @@ public enum Servicios {
 	/**
 	 * getContexto
 	 *
-	 * @return
+	 * @return el valor del contexto
 	 */
 	public String getContexto() {
 		return contexto;
@@ -172,7 +172,7 @@ public enum Servicios {
 	/**
 	 * getParametros
 	 *
-	 * @return
+	 * @return el valor de los parametros
 	 */
 	public String[] getParametros() {
 		return Arrays.copyOf(parametros, parametros.length);
@@ -181,7 +181,7 @@ public enum Servicios {
 	/**
 	 * getMetodo
 	 *
-	 * @return
+	 * @return el valor del método
 	 */
 	public Metodo getMetodo() {
 		return metodo;
@@ -190,7 +190,7 @@ public enum Servicios {
 	/**
 	 * getTiempoConexion
 	 *
-	 * @return
+	 * @return el valor del tiempo de la conexión
 	 */
 	public int getTiempoConexion() {
 		return tiempoConexion;
@@ -199,7 +199,7 @@ public enum Servicios {
 	/**
 	 * getTiempoConsumo
 	 *
-	 * @return
+	 * @return el valor del tiempo del consumo
 	 */
 	public int getTiempoConsumo() {
 		return tiempoConsumo;
@@ -208,7 +208,7 @@ public enum Servicios {
 	/**
 	 * getTipoContenido
 	 *
-	 * @return
+	 * @return el valor del contenido
 	 */
 	public TipoContenido getTipoContenido() {
 		return tipoContenido;
@@ -217,8 +217,8 @@ public enum Servicios {
 	/**
 	 * replaceURL
 	 *
-	 * @param valorAnterior
-	 * @param nuevoValor
+	 * @param valorAnterior valor de valorAnterior
+	 * @param nuevoValor valor de nuevoValor
 	 */
 	public void replaceURL(String valorAnterior, String nuevoValor) {
 		this.contexto = this.contexto.replace(valorAnterior, nuevoValor);
@@ -228,9 +228,9 @@ public enum Servicios {
 	/**
 	 * contiene
 	 *
-	 * @param servicio
+	 * @param servicio valor del servicio
 	 *
-	 * @return
+	 * @return bandera de evaluación del servicio
 	 */
 	public static boolean contiene(String servicio) {
 		for (Servicios c : Servicios.values()) {
@@ -243,9 +243,9 @@ public enum Servicios {
 	}
 	
 	/**
-	 * @param servicio
+	 * @param servicio valor del servicio
 	 *
-	 * @return
+	 * @return objeto de servicio
 	 */
 	public static Servicios servicio(String servicio) {
 		for (Servicios c : Servicios.values()) {

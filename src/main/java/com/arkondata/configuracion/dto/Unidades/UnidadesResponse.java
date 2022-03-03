@@ -65,6 +65,13 @@ public class UnidadesResponse {
      * Fecha de Modificación:2022-03-02
      * Persona que modifico: MACM
      * Descripción de modificación:
+     *
+     * @param id valor para id
+     * @param vehicle_id valor para vehicle_id
+     * @param vehicle_label valor para vehicle_label
+     * @param vehicle_current_status valor para vehicle_current_status
+     * @param geographic_point valor para geographic_point
+     * @param ubicacion valor para ubicacion
      */
     public UnidadesResponse(BigInteger id, BigInteger vehicle_id, BigInteger vehicle_label,
                             BigInteger vehicle_current_status, String geographic_point, AlcaldiaModel ubicacion) {

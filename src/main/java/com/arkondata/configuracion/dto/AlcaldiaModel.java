@@ -52,6 +52,11 @@ public class AlcaldiaModel {
      * Fecha de Modificación:2022-03-02
      * Persona que modifico: MACM
      * Descripción de modificación:
+     *
+     * @param calle valor para calle del modelo
+     * @param region valor para region del modelo
+     * @param alcaldia valor para alcaldia del modelo
+     * @param pais valor para pais del modelo
      */
     public AlcaldiaModel(String calle, String region, String alcaldia, String pais) {
         this.calle = calle;

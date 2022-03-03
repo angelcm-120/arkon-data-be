@@ -45,7 +45,7 @@ public class Redes {
 	/**
 	 * getIP
 	 *
-	 * @return
+	 * @return la IP
 	 */
 	public static String getIP() {
 		return ip;
@@ -70,7 +70,7 @@ public class Redes {
 	/**
 	* getPuertoHttp
 	*
-	* @return
+	* @return el puerto http
 	*/
 	public static int getPuertoHttp() {
 		try {
@@ -105,7 +105,7 @@ public class Redes {
 	/**
 	* getPuertoHttps
 	*
-	* @return
+	* @return puerto https
 	*/
 	public static int getPuertoHttps() {
 		try {
@@ -140,7 +140,7 @@ public class Redes {
 	/**
 	* cargaIP
 	*
-	* @return
+	* @return carga de la IP
 	*/
 	public static boolean cargaIP() {
 		try {
@@ -176,9 +176,9 @@ public class Redes {
 	/**
 	* validaIP
 	*
-	* @param servidoresLista
+	* @param servidoresLista valor para lista de servidores
 	*
-	* @return
+	* @return valida la IP
 	*/
 	public static boolean validaIP(ArrayList<String> servidoresLista) {
 		try {
@@ -189,7 +189,22 @@ public class Redes {
 			return false;
 		}
 	}
-	
+
+	/**
+	 * Nombre de proyecto: mso_metrobus
+	 * Sistema:MSO Base
+	 * Arkon Data Test
+	 * Nombre de método: obtenIP
+	 * Utilizado para recuperar la IP
+	 * Persona que modifico: MACM
+	 * Descripción de modificación:
+	 *
+	 * validaIP
+	 *
+	 * @param servidoresLista valor para lista de servidores
+	 *
+	 * @return la IP
+	 */
 	private static boolean obtenIP(ArrayList<String> servidoresLista) throws
 	          SocketException {
 		Enumeration<NetworkInterface> e = NetworkInterface.getNetworkInterfaces();
@@ -286,7 +301,7 @@ public class Redes {
 	* @param tipoSeguridad
 	* 	(TLS|SSL)
 	*
-	* @return
+	* @return el cliente http
 	*/
 	public static HttpClient httpClientCore(String tipoSeguridad) {
 		try {
@@ -312,12 +327,11 @@ public class Redes {
 	* Utilizado para implementar el nuevo cliente http
 	* Persona que modifico: MACM
 	* Descripción de modificación:
-
-	*/
-	/**
+	*
+	*
 	* httpClientCore
 	*
-	* @return
+	* @return cliente http
 	*/
 	public static HttpClient httpClientCore() {
 		//tipoSeguridad SSL o TLS

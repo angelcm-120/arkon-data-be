@@ -27,7 +27,9 @@ public class Validaciones {
 	 * Fecha de Modificación:2021-11-02
 	 * Persona que modifico: MACM
 	 * Descripción de modificación: Verifica que un String sea un número.
-
+	 *
+	 * @param valor valor que se valida
+	 * @return validación de conversión
 	 */
 	public static boolean isNumber(String valor) {
 		try {
@@ -53,7 +55,9 @@ public class Validaciones {
 	 * Fecha de Modificación:2021-11-02
 	 * Persona que modifico: MACM
 	 * Descripción de modificación: Verifica que un String sea un número igual a cero.
-
+	 *
+	 * @param valor valor que se valida
+	 * @return validación de conversión
 	 */
 	public static boolean isNumberIgualCero(String valor) {
 		try {
@@ -78,7 +82,9 @@ public class Validaciones {
 	 * Fecha de Modificación:2021-11-02
 	 * Persona que modifico: MACM
 	 * Descripción de modificación: Verifica que un String sea un número positivo o igual a cero.
-
+	 *
+	 * @param valor valor que se valida
+	 * @return validación de conversión
 	 */
 	public static boolean isNumberPositivo(String valor) {
 		try {
@@ -103,7 +109,9 @@ public class Validaciones {
 	 * Fecha de Modificación:2021-11-02
 	 * Persona que modifico: MACM
 	 * Descripción de modificación: Verifica que un String sea un número menor a cero.
-
+	 *
+	 * @param valor valor que se valida
+	 * @return validación de conversión
 	 */
 	public static boolean isNumberMenorCero(String valor) {
 		try {
@@ -127,7 +135,9 @@ public class Validaciones {
 	 * Fecha de Modificación:2021-08-27
 	 * Persona que modifico: MACM
 	 * Descripción de modificación: Verifica que un String sea un número y sea mayor a cero.
-
+	 *
+	 * @param valor valor que se valida
+	 * @return validación de conversión
 	 */
 	public static boolean isNumberMayorCero(String valor) {
 		try {
@@ -150,7 +160,9 @@ public class Validaciones {
 	 * Fecha de Modificación:2021-11-02
 	 * Persona que modifico: MACM
 	 * Descripción:  Metodo que permite validar si el dato de entrada es flotante y mayor a cero
-
+	 *
+	 * @param valor valor que se valida
+	 * @return validación de conversión
 	 */
 	public static boolean isFloat(String valor) {
 		try {
@@ -174,7 +186,9 @@ public class Validaciones {
 	 * Fecha de Modificación:2021-11-02
 	 * Persona que modifico: MACM
 	 * Descripción:  Metodo que permite validar si el dato de entrada es flotante y menor a cero
-
+	 *
+	 * @param valor valor que se valida
+	 * @return validación de conversión
 	 */
 	public static boolean isFloatMenorCero(String valor) {
 		try {
@@ -197,7 +211,9 @@ public class Validaciones {
 	 * Fecha de Modificación:2021-10-27
 	 * Persona que modifico: MACM
 	 * Descripción:  Metodo que permite validar si el dato de entrada es flotante y mayor a cero
-
+	 *
+	 * @param valor valor que se valida
+	 * @return validación de conversión
 	 */
 	public static boolean isFloatMayorCero(String valor) {
 		try {
@@ -220,7 +236,9 @@ public class Validaciones {
 	 * Fecha de Modificación:2021-11-01
 	 * Persona que modifico: MACM
 	 * Descripción de modificación:
-
+	 *
+	 * @param cadena valor que se valida
+	 * @return validación de cadena
 	 */
 	public static boolean validaCadenas(String cadena){
 		return (Objects.nonNull(cadena) && !"".equals(cadena) && !"null".equals(cadena) && !"true".equals(cadena));
